@@ -1,33 +1,16 @@
 1.Understand the difference between block-level and inline elements. Practice examples with <div>,<p>(block)and<span>,<a>(inline).
 Block level:
-A block-level element always starts on a new line and takes the full width of the page.
+A block-level element always starts on a new line and takes the full width of the page.(
 Examples:
-<!DOCTYPE html>
-<html>
-<head>
-<title>Block Example</title>
-</head>
-<body>
-<div>
 <p>This is the first paragraph</p>
-<p>This is the second paragraph</p>
-</div>
-</body>
-</html>
+<h1>This is the second paragraph<h1>
+
 Inline elements:
 An inline element does not start on a new line. It only takes the width needed for its content.
 Examples:
-<!DOCTYPE html>
-<html>
-<head>
-<title>Inline Example</title>
-</head>
-<body>
 <div>
 <p>This is<span style="color:red;">red</span></p>
 </div>
-</body>
-</html>
 | Block-level               | Inline                  |
 | ------------------------- | ----------------------- |
 | Starts on new line        | Does not start new line |
@@ -67,4 +50,5 @@ Example:
 <p>-Used to write a paragraph
 <div>-A block container used to group elements
 <span>-An inline element used to style small text inside a paragraph
+
 
