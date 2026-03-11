@@ -1,0 +1,70 @@
+1.Understand the difference between block-level and inline elements. Practice examples with <div>,<p>(block)and<span>,<a>(inline).
+Block level:
+A block-level element always starts on a new line and takes the full width of the page.
+Examples:
+<!DOCTYPE html>
+<html>
+<head>
+<title>Block Example</title>
+</head>
+<body>
+<div>
+<p>This is the first paragraph</p>
+<p>This is the second paragraph</p>
+</div>
+</body>
+</html>
+Inline elements:
+An inline element does not start on a new line. It only takes the width needed for its content.
+Examples:
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inline Example</title>
+</head>
+<body>
+<div>
+<p>This is<span style="color:red;">red</span></p>
+</div>
+</body>
+</html>
+| Block-level               | Inline                  |
+| ------------------------- | ----------------------- |
+| Starts on new line        | Does not start new line |
+| Takes full width          | Takes only needed width |
+| Used for layout/structure | Used for styling text   |
+| Example: `<div>` `<p>`    | Example: `<span>` `<a>` |
+
+2.Learn and practice basic tags: headings <h1>–<h6>, paragraph <p>, division <div>, and inline <span>. Create a sample page using them.
+Example:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic HTML Tags Practice</title>
+</head>
+<body>
+<!-- Headings -->
+<h1>Main Heading (h1)</h1>
+<h2>Sub Heading (h2)</h2>
+<h3>Smaller Heading (h3)</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+<!-- Division container -->
+<div>
+    <p>This is a paragraph inside a div container.</p>
+    <p>
+      This paragraph contains an 
+        <span style="color:blue;">inline span text</span> 
+        to highlight a word.
+    </p>
+</div>
+</body>
+</html>
+
+<h1> is the largest
+<h6> is the smallest
+<p>-Used to write a paragraph
+<div>-A block container used to group elements
+<span>-An inline element used to style small text inside a paragraph
+
