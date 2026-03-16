@@ -1,0 +1,170 @@
+ 1.Learn what attributes are in HTML. Explore how they provide extra information about elements (e.g.,href,src,alt).
+
+what is the attributes:
+HTML attributes is an extra information about an HTML element.
+They are inside the opening tag and closing tag.
+EXAMPLE:
+<a href="https:learning.sla institute">Visit a page</a>
+
+2.Learn how to use class for styling multiple elements with CSS. Practice applying same class to multiple tags.
+
+A class is an attribute used to apply the same CSS style to multiple HTML elements.A class is an attribute used to apply the same CSS style to multiple HTML elements.
+
+EXAMPLE:
+<style>
+.title{
+    color: blue;
+    text-align: center;
+}</style>
+<h1 class="title">Welcome</h1>
+<p class="title">This is my website</p>
+<div class="title">Learning HTML and CSS</div>
+
+3.Understand the uniqueness of id. Use it for styling and JavaScript targeting. Practice assigning unique IDs.
+
+UNIQUENESS OF ID:
+The id attribute is used to give a unique identifier to a single HTML element.
+
+Each id must be used only once in a webpage.
+It helps CSS styling and JavaScript targeting.
+
+EXAMPLE:
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#header{
+   color: blue;
+   text-align: center;
+}
+#para{
+   color: green;
+}
+#footer{
+   background-color: lightgray;
+}
+</style>
+</head>
+<body>
+<h1 id="header">Welcome to My Website</h1>
+<p id="para">This is my first HTML page.</p>
+<div id="footer">Copyright 2026</div>
+</body>
+</html>
+
+4.Explore the title attribute (tooltip on hover) and practice with attributes like lang, style, and hidden?
+
+EXAMPLE:
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h1 title="This is the main heading">My Website</h1>
+<p style="color:blue;">This paragraph is blue.</p>
+<p hidden>This paragraph is hidden.</p>
+</body>
+</html>
+
+5.Create hyperlinks with href. Practice absolute links (to external websites) and relative links (to local files).
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hyperlink Example</title>
+</head>
+<body>
+<h1>My Website</h1>
+<p>
+<a href="https://www.wikipedia.org">Open Wikipedia</a>
+</p>
+<p>
+<a href="contact.html">Go to Contact Page</a>
+</p>
+</body>
+</html>
+6.Add attributes like target="_blank", download, mailto:. Create navigation between pages.
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Links Example</h2>
+<a href="https://www.youtube.com" target="_blank">Open YouTube</a>
+<br><br>
+<a href="notes.pdf" download>Download Notes</a>
+<br><br>
+<a href="mailto:info@gmail.com">Send Email</a>
+</body>
+</html>
+7.Learn src and alt attributes. Insert images into a webpage.
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>My Image</h2>
+<img src="nature.jpg" alt="Nature Image">
+</body>
+</html>
+
+SRC ATTRIBUTE:
+src means source.
+the browser where the image file is located.
+
+ALT ATTRIBUTE:
+alt means alternative text.
+It also helps screen readers and SEO.
+
+8.Practice adding image dimensions (width, height), responsive images, and clickable images (image inside <a>).
+
+<body>
+<h2>Image Example</h2>
+<img src="flower.jpg" alt="Flower" width="200" height="150">
+<br><br>
+<img src="nature.jpg" alt="Nature" style="width:100%; height:auto;">
+<br><br>
+<a href="https://www.wikipedia.org">
+    <img src="wiki.png" alt="Wikipedia Logo" width="150">
+</a>
+</body>
+
+9.Create a webpage with navigation links, multiple sections using IDs, and images with proper alt text and titles.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>My Website</title>
+</head>
+<body>
+<!-- Navigation Menu -->
+<h2>Navigation</h2>
+<a href="#home">Home</a> |
+<a href="#about">About</a> |
+<a href="#gallery">Gallery</a> |
+<a href="#contact">Contact</a>
+<hr>
+<!-- Home Section -->
+<section id="home">
+<h2 title="Home Section">Home</h2>
+<p>Welcome to my website.</p>
+<img src="home.jpg" alt="Home image" title="Welcome Image" width="200">
+</section>
+<hr>
+<!-- About Section -->
+<section id="about">
+<h2 title="About Section">About</h2>
+<p>This page is created to practice HTML navigation and images.</p>
+<img src="about.jpg" alt="About website image" title="About Us Image" width="200">
+</section>
+<hr>
+<!-- Gallery Section -->
+<section id="gallery">
+<h2 title="Gallery Section">Gallery</h2>
+<img src="nature.jpg" alt="Beautiful nature" title="Nature Image" width="200">
+<img src="flower.jpg" alt="Colorful flower" title="Flower Image" width="200">
+</section>
+<hr>
+<!-- Contact Section -->
+<section id="contact">
+<h2 title="Contact Section">Contact</h2>
+<p>Email us for more information.</p>
+</section>
+</body>
+</html>
