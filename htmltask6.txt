@@ -1,0 +1,202 @@
+1.Learn the purpose of <form> in HTML. Create a basic form structure with action and method.
+
+Purpose of <form> in HTML
+
+It is used to collect user input and send that data to a server for processing.
+
+KEY ATTRIBUTES OF <form>
+1.action
+specifies where the form data is sent
+2.method
+Defines how data is sent
+Two common types:
+GET (data visible in URL)
+POST(data hidden)
+
+EXAMPLE:
+<!DOCTYPE html>
+<html>
+<head>
+    **<title>Simple Form</title>**
+
+</head>
+<body>
+<h2>Student Form</h2>
+<form action="submit.php" method="POST">
+<!-- Name -->
+<label for="name">Name:</label>
+<input type="text" id="name" placeholder="Enter username"><br><br>
+<!-- Email -->
+<label for="email">Email:</label>
+<input type="email" id="email" placeholder="Enter email"><br><br>
+<!-- Password -->
+<label for="password">Password:</label>
+<input type="password" id="password"><br><br>
+<!-- Submit Button -->
+        **<button type="submit">Submit</button>**
+
+</form>
+</body>
+</html>
+
+2.Practice using <input type="text">, <input type="password">, and <input type="email">. Create a login form?
+
+<body>
+<h2>Login Form</h2>
+<form>
+<!-- Username (text) -->
+<label for="username">Username:</label>
+<input type="text" id="username"><br><br>
+<!-- Email -->
+<label for="email">Email:</label>
+<input type="email" id="email" name="email"><br><br>
+<!-- Password->
+<label for="password">Password:</label>
+<input type="password" id="password"><br><br>
+<!- Submit Button -->
+<button type="submit">Login</button>
+</form>
+
+3.Use checkboxes for multiple choices, radio buttons for single choice, and number fields for numeric input.
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Survey Form</title>
+</head>
+<body>
+<h2>Student Survey</h2>
+<form>
+<!-- Name -->
+<label>Name</label>
+<input type="text" name="username"><br><br>
+<!-- Number (Age) -->
+<label>Age:</label>
+<input type="number" name="age" min="18" max="23"><br><br>
+<!-- Radio Buttons (Single Choice) -->
+<label>Gender:</label><br>
+<input type="radio" name="gender" value="male"> Male<br>
+<input type="radio" name="gender" value="female"> Female<br>
+<input type="radio" name="gender" value="other"> Other<br><br>
+<!-- Checkboxes (Multiple Choice) -->
+<label>Skills:</label><br>
+<input type="checkbox" name="skills" value="html"> HTML<br>
+<input type="checkbox" name="skills" value="css"> CSS<br>
+<input type="checkbox" name="skills" value="javascript"> JavaScript<br><br>
+<!-- Submit -->
+<button type="submit">Submit</button></form>
+</body>
+</html>
+
+4.Learn <label> for accessibility and placeholder for hints. Connect labels with inputs using for and id.
+
+<label> definition:
+It is used to define a description for an input field in a form.
+
+PLACEHOLDER(HINT):
+Shows a hint inside the input box
+Disappears when user starts typing
+
+EXAMPLE:
+<label for="name">Name:</label>
+<input type="text" id="name" placeholder="Enter your name">
+
+5.Use required to make fields mandatory. Practice building a signup form where name, email, and password are required.
+REQUIRED DEFINTION:
+required is an attribute used to make a field mandatory.
+User cannot submit the form without filling it.
+
+EXAMPLE:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signup Form</title>
+</head>
+<body>
+<h2>Signup Form</h2>
+<form>
+<!-- Name -->
+<label for="name">Name:</label><br>
+<input type="text" id="name" laceholder="Enter your name" required><br><br>
+<!-- Email -->
+<label for="email">Email:</label><br>
+<input type="email" id="email"
+placeholder="Enter your email" required><br><br>
+<!-- Password -->
+<label for="password">Password:</label><br>
+<input type="password" id="password"
+placeholder="Enter your password" required><br><br>
+<!-- Submit -->
+<button type="submit">Signup</button>
+</form>
+</body>
+</html>
+
+6.Explore built-in HTML5 validation (email format, number range, required). Test submitting forms with incorrect data.
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Validation Form</h2>
+<form>
+<!- Name -->
+<label for="name">Name:</label><br>
+<input type="text" id="name" required><br><br>
+<! Email -->
+<label for="email">Email:</label><br>
+<input type="email" id="email" required><br><br>
+<!- Age -->
+<label for="age">Age:</label><br>
+<input type="number" id="age" min="15max="25 required><br><br>
+<button type="submit">Submit</button>
+</form>
+</body>
+</html>
+
+7.Build a registration form with text, email, password, gender (radio), hobbies (checkbox), age (number), and submit button. Include labels, placeholders, and validation.
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+</head>
+<body>
+<h2>Registration Form</h2>
+<form>
+<!-- Name -->
+<label for="name">Name:</label><br>
+<input type="text" id="name" name="username"
+placeholder="Enter your name" required><br><br>
+<!-- Email -->
+<label for="email">Email:</label><br>
+<input type="email" id="email" name="email"
+placeholder="Enter your email" required><br><br>
+<!-- Password -->
+<label for="password">Password:</label><br>
+<input type="password" id="password" name="password"           placeholder="Enter your password" minlength="6" required><br><br>
+<!-- Gender (Radio - Single Choice) -->
+<label>Gender:</label><br>
+<input type="radio" id="male" name="gender" value="male" required>
+<label for="male">Male</label><br>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label><br>
+<input type="radio" id="other" name="gender" value="other">
+<label for="other">Other</label><br><br>
+<!-- Hobbies (Checkbox - Multiple Choice) -->
+<label>Hobbies:</label><br>
+<input type="checkbox" id="reading"value="reading">
+<label for="reading">Reading</label><br>
+<input type="checkbox" id="sports" value="sports">
+<label for="sports">Sports</label><br>
+<input type="checkbox" id="music"  value="music">
+<label for="music">Music</label><br><br>
+<!-- Age -->
+<label for="age">Age:</label><br>
+<input type="number" id="age" name="age"
+placeholder="Enter your age" min="10 max="30 required<br>
+<!-- Submit -->
+<button type="submit">Register</button>
+</form>
+</body>
+</html>
