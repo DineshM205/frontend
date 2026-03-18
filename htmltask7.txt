@@ -1,0 +1,206 @@
+1.Learn the difference between unordered (<ul>and ordered(<ol>) lists. Create shopping list and steps list?**
+
+Unordered List:<ul>
+An unordered list is a list of items. 
+The order is not important, and items are displayed with bullet points (•).
+
+Example:
+
+<ul>
+<li>Milk</li>
+<li>Bread</li>
+<li>Eggs</li>
+<li>Rice</li>
+</ul>
+
+Ordered List:<ol>
+An ordered list is a list of items.
+The order is important, and items are displayed with numbers or letters.
+
+Example:
+<ol>
+<li>Wake up</li>
+<li>Brush teeth</li>
+<li>Take bath</li>
+<li>Go to college</li>
+</ol>
+
+2.Practice using <li> inside <ul> and <ol>. Create nested lists (list inside another list).
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nested Lists</title>
+</head>
+<body>
+<h2>Programming Languages</h2>
+<ul>
+<li>Frontend</li>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<ul>
+<li>React</li>
+<li>Vue</li>
+<li>Angular</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Backend</li>
+<ul>
+<li>Python</li> 
+<li>Node.js</li> 
+ <li>Java</li> 
+</ul> 
+ </li> 
+<li>Database</li> 
+<ol> 
+<li>MySQL</li>
+<li>PostgreSQL</li> 
+<li>MongoDB</li> 
+</ol> 
+</li> 
+</ul>
+</body>
+</html>
+
+3.Learn the structure of tables. Create a simple table with rows and columns?
+
+Table structure:
+<table> — wraps the entire table
+<tr> — a table row
+<th> — a header cell (bold \& centered by default)
+<td> — a data cell
+
+Simple Table:
+
+
+
+ <!DOCTYPE html> 
+
+ <html lang="en"> 
+
+ <head> 
+
+ <meta charset="UTF-8">
+
+<title>Simple Table</title>
+
+</head>
+
+<body>
+
+<h2>Student Details</h2>
+
+<table border="1">
+
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>City</th>
+</tr>
+<tr>
+<td>Dinesh</td>
+<td>20</td>
+<td>Chennai</td>
+</tr>
+<tr>
+<td>Ravi</td>
+<td>22</td>
+<td>Madurai</td>
+</tr>
+</table>
+</body>
+</html>
+
+4.Add headers to tables using <th>. Compare difference between <td> and <th>.
+
+Different between <th>(table header)and <td>(Table Data):
+
+<th>(Table Header):
+Purpose: Heading (title of column/row)
+Text Style: Bold and Center aligned
+Usage: First row or column
+
+<td>(Table Data):
+Purpose: Normal data
+Text Style: Normal text
+Usage: Inside rows for data
+
+Example code:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Table</title> 
+ </head> 
+ <body> 
+ <h2>Student Details</h2> 
+ <table border="1"> 
+<tr> 
+ <th>Name</th> 
+ <th>Age</th> 
+ <th>City</th> 
+ </tr> 
+<tr>
+ <td>Dinesh</td>
+ <td>20</td>
+ <td>Chennai</td>
+ </tr>
+<tr>
+<td>Ravi</td>
+<td>22</td>
+<td>Madurai</td>
+</tr>
+</table>
+</body>
+</html>
+
+5.Practice table attributes: colspan, rowspan, and add borders, cell spacing, and padding with CSS.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Table Practice</title>
+<style>
+table{border-collapse: collapse; width:60%;}
+\* removes double borders \*
+th, td {
+ border: 2px solid black; 
+ padding: 10px;            
+text-align: center;
+}
+table {border-spacing: 10px;} /\* space between cells (works if collapse removed) \*/
+</style>
+</head>
+<body>
+<h2>Student Marks Table</h2>
+<table>
+  <tr>
+    <th rowspan="2">Name</th>
+    <th colspan="2">Marks</th>
+  </tr>
+  <tr>
+    <th>Maths</th>
+    <th>Science</th>
+  </tr>
+  <tr>
+    <td>Dinesh</td>
+    <td>90</td>
+    <td>85</td>
+  </tr>
+  <tr>
+    <td>Ravi</td>
+    <td>88</td>
+    <td>92</td>
+  </tr>
+</table>
+</body>
+</html>
+
+ 
