@@ -1,0 +1,122 @@
+ 1. Create a div with a class .box.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Box</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+}
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+
+ 2. Inside the .box, place some text content.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Box Content</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        This is the content inside the box.
+    </div>
+</body>
+</html>
+
+3. Style the .box to clearly show:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Styled Box</title>
+    <style>
+        .box {
+            width: 250px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Styled box</div>
+</body>
+</html>
+4. margin: space outside the box.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Margin Example</title>
+    <style>
+        .box {
+            margin: 30px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Margin example</div>
+</body>
+</html>
+ 5. border:a visible outline.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Border Example</title>
+    <style>
+        .box {
+            border: 3px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Border example</div>
+</body>
+</html>
+
+6. padding: space inside the border, around the content.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Padding Example</title>
+    <style>
+        .box {
+            padding: 20px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Padding example</div>
+</body>
+</html>
+ 7. content: the actual text 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Content Example</title>
+    <style>
+        .box {
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        This is the actual content inside the box.
+    </div>
+</body>
+</html>      
