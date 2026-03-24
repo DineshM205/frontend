@@ -1,0 +1,89 @@
+1.Create a simple webpage that displays three sections, each styled using a different CSS method: 
+i)Inline CSS ii)Internal CSS iii)External CSS
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Methods</title>
+  <!-- Internal CSS -->
+  <style>
+    .internal {
+      color: blue;
+      background-color: lightgray;
+    }
+  </style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Inline CSS -->
+  <div style="color: red; background-color: yellow;">
+    This is Inline CSS section
+  </div>
+  <br>
+  <!-- Internal CSS -->
+  <div class="internal">
+    This is Internal CSS section
+  </div>
+  <br>
+  <!-- External CSS -->
+  <div class="external">
+    This is External CSS section
+  </div>
+</body>
+</html>
+
+2.i).Three sections are styled correctly using different methods.
+ii)External stylesheet is linked properly and loads without errors.
+iii)The layout and styling clearly differentiate the three CSS types.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Methods Example</title>
+
+  <!-- Internal CSS -->
+  <style>
+    .internal {
+      color: blue;
+      background-color: lightgray;
+      padding: 20px;
+      margin: 10px;
+    }
+  </style>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h2>Three CSS Methods Example</h2>
+
+  <!-- i) Inline CSS -->
+  <div style="color: red; background-color: yellow; padding: 20px; margin: 10px;">
+    This section uses Inline CSS
+  </div>
+
+  <!-- ii) Internal CSS -->
+  <div class="internal">
+    This section uses Internal CSS
+  </div>
+
+  <!-- iii) External CSS -->
+  <div class="external">
+    This section uses External CSS
+  </div>
+
+</body>
+</html>
+
+CSS FILE
+.external {
+  color: green;
+  background-color: lightblue;
+  padding: 20px;
+  margin: 10px;
+}
+
+
