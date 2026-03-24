@@ -1,0 +1,106 @@
+1.Build a row or column of boxes inside a flex container and control their alignment, spacing, and layout direction using Flexbox?
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 200px;
+  border: 2px solid black;
+}
+.container div {
+  width: 50px;
+  height: 50px;
+  background: blue;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+</body>
+</html>
+2. Create a web layout with a flex container that holds 3 child boxes?
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flexbox Layout</title>
+  <style>
+    .container {
+      /* Make it flex */
+      display: flex;
+      /* Center horizontally */         
+      justify-content: center;  
+       /* Center vertically */
+      align-items: center; 
+       /* Space between boxes */
+       gap: 20px;                   
+      height: 200px;
+      border: 2px solid black;
+    }
+.box {
+      width: 80px;
+      height: 80px;
+      background-color: blue;
+      color: white;
+      text-align: center;
+      line-height: 80px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+</body>
+</html>
+
+3. Use the following Flexbox properties to:
+Display the container as a flexbox
+Set the direction (row or column).
+Adjust horizontal alignment using justify-content.
+Adjust vertical alignment using align-items.
+Add spacing between items using gap.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flexbox Properties</title>
+  <style>
+    .container {
+      display: flex;              
+      flex-direction: row;        
+      justify-content: center;    
+      align-items: center;        
+      gap: 20px;                  
+      height: 200px;
+      border: 2px solid black;
+    }
+
+    .box {
+      width: 60px;
+      height: 60px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</body>
+</html>
