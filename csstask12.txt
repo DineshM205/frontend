@@ -1,0 +1,78 @@
+1.Colors-Change text and border colors
+2.Backgrounds -Set background colors and images
+3.Fonts-Apply different font families and sizes
+4.Text Styles-Use bold, italic, underline, etc.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Styling Example</title>
+
+    <style>
+        /* 1. Colors */
+        .color-box {
+            color: blue;                  /* text color */
+            border: 3px solid red;       /* border color */
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* 2. Backgrounds */
+        .background-box {
+            background-color: lightyellow;
+            background-image: url('https://via.placeholder.com/150');
+            background-repeat: no-repeat;
+            background-position: right;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        /* 3. Fonts */
+        .font-box {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+            border: 2px dashed green;
+        }
+
+        /* 4. Text Styles */
+        .text-style-box {
+            font-weight: bold;        /* bold */
+            font-style: italic;       /* italic */
+            text-decoration: underline; /* underline */
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid purple;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>CSS Styling Demo</h1>
+
+    <!-- Colors -->
+    <div class="color-box">
+        This text is blue with a red border.
+    </div>
+
+    <!-- Background -->
+    <div class="background-box">
+        This box has a background color and image.
+    </div>
+
+    <!-- Fonts -->
+    <div class="font-box">
+        This text uses Arial font and larger size.
+    </div>
+
+    <!-- Text Styles -->
+    <div class="text-style-box">
+        This text is bold, italic, and underlined.
+    </div>
+
+</body>
+</html>
+
