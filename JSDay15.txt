@@ -1,0 +1,98 @@
+1.What is JavaScript? Write a simple script.
+*JavaScript is a programming language used to make websites and web applications, interactive webpages
+
+SIMPLE SCRIPT:
+let a =108;
+console.log(a);
+
+2.Add a script tag inside HTML and print 'Hello JS'.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My First Page</title>
+</head>
+<body>
+<script>
+console.log("Hello JS");
+</script
+</body>
+</html>
+
+3.Log your name and age in console.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+    <script>
+        console.log("Name: Dinesh");
+        console.log("Age: 20");
+    </script>
+
+</body>
+</html>
+
+4.Write single-line and multi-line comments.
+Single Line Comment:
+//console.log("Dinesh");
+
+Multi-Line Comment:
+/*<script>
+        console.log("Name: Dinesh");
+        console.log("Age: 20");
+    </script>*/
+
+5.Integrate HTML with Java script and display a body with a 'KKR' jersey color and a Box inside it with 'CSK' jersey color and apply the styles with your own creativity.
+
+<body>
+    <div id="container">
+        <div id="kkr">KKR</div>
+        <div id="csk">CSK</div>
+    </div>
+
+    <script>
+        // Body style
+        document.body.style.backgroundColor = "white";
+        document.body.style.display = "flex";
+        document.body.style.justifyContent = "center";
+        document.body.style.alignItems = "center";
+        document.body.style.height = "100vh";
+
+        let kkr = document.getElementById("kkr");
+        let csk = document.getElementById("csk");
+        let container = document.getElementById("container");
+        // Container style
+        container.style.display = "flex";
+        container.style.gap = "100px";
+
+        // KKR Box (Purple)
+        kkr.style.backgroundColor = "purple";
+        kkr.style.color = "black";
+        kkr.style.width = "200px";
+        kkr.style.height = "200px";
+        kkr.style.display = "flex";
+        kkr.style.alignItems = "center";
+        kkr.style.justifyContent = "center";
+        kkr.style.textShadow = "4px 4px 2px";
+        kkr.style.boxShadow = "1px 1px 1px 2px";
+
+        kkr.style.border = "2px solid black";
+        kkr.style.fontSize = "50px";
+        kkr.style.fontWeight = "bold";
+        kkr.style.borderRadius = "15px";
+
+        // CSK Box (Yellow)
+        csk.style.backgroundColor = "yellow";
+        csk.style.border = "2px solid black";
+        csk.style.color = "black";
+        csk.style.width = "200px";
+        csk.style.height = "200px";
+        csk.style.display = "flex";
+        csk.style.alignItems = "center";
+        csk.style.justifyContent = "center";
+        csk.style.fontSize = "50px";
+        csk.style.textShadow = "4px 4px 2px";
+        csk.style.boxShadow = "1px 1px 1px 2px";
+        csk.style.fontWeight = "bold";
+        csk.style.borderRadius = "15px";
+    </script><br><br>
