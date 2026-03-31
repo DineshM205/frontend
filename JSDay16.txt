@@ -1,0 +1,41 @@
+1.Declare variables using var, let, and const.
+
+var name = "Dinesh";
+let age = 21;
+const country = "India";
+
+2.Create variables with string, number, boolean, null, undefined.
+// String
+let studentName = "Dinesh";
+// Number
+let marks = 85;
+// Boolean
+let isPassed = true;
+// Null (empty value)
+let data = null;
+// Undefined (value not assigned)
+let result;
+
+3.Use +, -, *, /, %, ==, ===, &&, ||.
+ARITHMETIC OPERATORS:
+let a = 10;
+let b = 3;
+console.log(a + b);    // 13
+console.log(a - b);    // 7
+console.log(a * b);    // 30
+console.log(a / b);    // 3.33
+console.log(a % b);    // 1 (remainder)
+
+COMPARISON OPERATORS:
+let x = 5;
+let y = "5";
+console.log(x == y);  // true (value only)
+console.log(x === y); // false (value + type)
+
+lOGICAL OPERATORS:
+let isAdult = true;
+let hasID = false;
+// AND (both must be true)
+console.log(isAdult && hasID); // false
+// OR (any one true)
+console.log(isAdult || hasID); // true
