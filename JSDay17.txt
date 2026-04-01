@@ -1,0 +1,99 @@
+Task 1:
+a. Check if a number is positive or negative.
+
+let num = 10; // change value
+if (num > 0) {
+    console.log("Positive number");
+} else if (num < 0) {
+    console.log("Negative number");
+} else {
+    console.log("Zero");
+}
+
+b. Create a switch to print days of the week.
+
+let day = 3; // 1 to 7
+
+switch(day) {
+    case 1:
+        console.log("Sunday");
+        break;
+    case 2:
+        console.log("Monday");
+        break;
+    case 3:
+        console.log("Tuesday");
+        break;
+    case 4:
+        console.log("Wednesday");
+        break;
+    case 5:
+        console.log("Thursday");
+        break;
+    case 6:
+        console.log("Friday");
+        break;
+    case 7:
+        console.log("Saturday");
+        break;
+    default:
+        console.log("Invalid day");
+}
+
+
+Task 2:
+Story Line 1 - A Crew is travelling on a Boat. Totally 4 Members.
+a. Create a list of members inside a div. Give id to both list and div.
+Story Line 2 - Asking route to both Jack and Alice
+b. On clicking Jack button, display the route said by Jack.
+c. On clicking Alice button, display the route said by Alice
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Say Hay</title>
+    <style>
+        body{
+            background-color: rgb(64, 95, 41);
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Boat Crew</title>
+</head>
+<body>
+    <!-- Story Line 1 -->
+    <div id="crewDiv">
+        <h2 style="text-align: center; color: blue;">Crew Members</h2><hr>
+        <ol id="crewList">
+            <li>Jack</li>
+            <li>Alice</li>
+            <li>John</li>
+            <li>Emma</li>
+        </ol>
+    </div>
+    <!-- Story Line 2 -->
+    <h3>Ask Route</h3>
+    <button onclick="jackRoute()" style="background-color: rgb(80, 137, 137);">Ask Jack</button><br><br>
+    <button onclick="aliceRoute()" style="background-color: rgb(201, 104, 104);">Ask Alice</button>
+    <p id="result"></p>
+    <script>
+        function jackRoute() {
+            document.getElementById("result").innerHTML =
+            "Jack says: Go straight and turn left at the island.";
+        }
+
+        function aliceRoute() {
+            document.getElementById("result").innerHTML =
+            "Alice says: Take right and follow the lighthouse.";
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
