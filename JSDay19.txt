@@ -1,0 +1,40 @@
+1.Write a function to add two numbers.
+
+function add(a, b) {
+    return a + b;
+}
+console.log(add(5, 3)); // Output: 8
+
+2.Write a function expression to multiply two numbers.
+
+const multiply = function(a, b) {
+    return a * b;
+};
+console.log(multiply(10, 2)); // Output: 20
+
+3.Write an arrow function to subtract two numbers.
+
+const subtract = (a, b) => a - b;
+console.log(subtract(10, 4)); // Output: 6
+
+4.Write a function with parameters and return a value.
+
+function greet(name) {
+    return "Hello " + name;
+}
+console.log(greet("Dinesh")); // Output: Hello Dinesh
+
+
+5.Demonstrate global vs local scope.
+
+let globalVar = "I am Global";
+
+function testScope() {
+    let localVar = "I am Local";
+    console.log(globalVar); // Accessible
+    console.log(localVar);  // Accessible
+}
+testScope();
+
+console.log(globalVar); // Accessible
+// console.log(localVar); // Error (not accessible outside function)
