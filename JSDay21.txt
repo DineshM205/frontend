@@ -1,0 +1,39 @@
+1.Use map to double all numbers in an array.
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); 
+
+OUTPUT:
+[2, 4, 6, 8, 10]
+
+2.Use filter to get even numbers from an array.
+const numbers = [1, 2, 3, 4, 5, 6];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); 
+
+OUTPUT:
+[2, 4, 6]
+
+3.Use reduce to find the sum of an array.
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((total, num) => total + num, 0);
+console.log(sum); 
+
+OUTPUT:
+15
+
+
+4.Find the first number greater than 10.
+const numbers = [5, 8, 12, 20, 3];
+const result = numbers.find(num => num > 10);
+console.log(result); 
+
+OUTPUT:
+12
+5.Check if array includes a specific value.
+const numbers = [1, 2, 3, 4, 5];
+const hasValue = numbers.includes(3);
+console.log(hasValue);
+ 
+OUTPUT:
+true
