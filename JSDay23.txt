@@ -1,0 +1,40 @@
+1.Change text of an element using getElementById.
+<p id="demo">Old Text</p>
+<button onclick="changeText()">Click</button>
+<script>
+function changeText() {
+    document.getElementById("demo").innerText = "New Text";
+}
+</script>
+
+2. Select an element and change its style.
+<p id="text">Hello World</p>
+<button onclick="changeStyle()">Change Style</button>
+
+<script>
+function changeStyle() {
+    let el = document.getElementById("text");
+    el.style.backgroundColor = "yellow";
+}
+</script>
+
+3. Change content of a paragraph.
+<p id="para">This is old content</p>
+<button onclick="changeContent()">Change</button>
+
+<script>
+function changeContent() {
+    document.getElementById("para").innerHTML = "This is new content";
+}
+</script>
+
+4. Change color and font size of text.<p id="styleText">Styled Text</p>
+<button onclick="styleText()">Apply Style</button>
+
+<script>
+function styleText() {
+    let el = document.getElementById("styleText");
+    el.style.color = "blue";
+    el.style.fontSize = "25px";
+}
+</script>
