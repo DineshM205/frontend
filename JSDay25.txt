@@ -1,0 +1,41 @@
+Rewrite code with let and const.
+Use template literals with variables.
+Create a function with default parameter values.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List</title>
+</head>
+<body>
+    <ul id="movielist"></ul>
+
+    <script>
+        const movieDetails = ['Movie 1', 'Movie 2'];
+
+        const ul = document.getElementById("movielist");
+
+        // Function with default parameter
+        function createMovieItem(name = "No Movie", imgUrl = "https://picsum.photos/100") {
+            const li = document.createElement("li");
+
+            // Using template literal
+            li.innerHTML = `
+                <div>
+                    <img src="${imgUrl}" alt="${name}">
+                    <p>${name}</p>
+                </div>
+            `;
+
+            return li;
+        }
+
+        // Loop and add items
+        movieDetails.forEach((movie) => {
+            const li = createMovieItem(movie);
+            ul.appendChild(li);
+        });
+    </script>
+</body>
+</html>
