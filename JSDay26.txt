@@ -1,0 +1,52 @@
+ 1. Destructuring (Array & Object)
+
+Array Destructuring
+const numbers = [10, 20, 30];
+
+// Extract values
+const [a, b, c] = numbers;
+
+console.log(a); // 10
+console.log(b); // 20
+console.log(c); // 30
+
+Object Destructuring
+const user = {
+  name: "Dinesh",
+  age: 21,
+  city: "Chennai"
+};
+
+// Extract values
+const { name, age, city } = user;
+
+console.log(name); // Dinesh
+console.log(age);  // 21
+console.log(city); // Chennai
+
+2. Copy Array using Spread Operator
+const original = [1, 2, 3];
+
+// Copy array
+const copy = [...original];
+
+console.log(copy); // [1, 2, 3]
+
+// Modify copy
+copy.push(4);
+
+console.log(original); // [1, 2, 3] (unchanged)
+console.log(copy);     // [1, 2, 3, 4]
+
+3. Function using Rest Operator
+function sum(...numbers) {
+  let total = 0;
+
+ for (let num of numbers) {
+    total += num;
+  }
+
+  return total;
+}
+console.log(sum(1, 2, 3));       // 6
+console.log(sum(10, 20, 30, 40)); // 100
