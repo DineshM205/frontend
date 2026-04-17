@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Filter Names</title>
+</head>
+<!-- 1.Write a program to filter a list of names. Use textbox, and ul. On typing the letters in the textbox the list should be filtered. -->
+<body>
+
+    <h2>Filter Names</h2>
+
+    <input type="text" id="searchBox" placeholder="Type to search...">
+
+    <ul id="nameList">
+        <li>Dinesh</li>
+        <li>Arun</li>
+        <li>Priya</li>
+        <li>Karthik</li>
+        <li>Divya</li>
+    </ul>
+
+    <script>
+        const searchBox = document.getElementById("searchBox");
+        const names = document.querySelectorAll("#nameList li");
+
+        searchBox.addEventListener("input", function () {
+            const value = this.value.toLowerCase();
+
+            names.forEach(function (name) {
+                if (name.textContent.toLowerCase().includes(value)) {
+                    name.style.display = "block";
+                } else {
+                    name.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
