@@ -1,0 +1,39 @@
+1.Concise Arrow Functions
+// Single parameter (no brackets needed)
+const square = x => x * x;
+
+// Multiple parameters (use brackets)
+const add = (a, b) => a + b;
+
+// No parameters
+const greet = () => "Hello!";
+
+// With multiple lines (use return)
+const multiply = (a, b) => {
+  let result = a * b;
+  return result;
+};
+
+console.log(square(4));   // 16
+console.log(add(2, 3));   // 5
+console.log(greet());     // Hello!
+console.log(multiply(3, 4)); // 12
+
+2. Simple Class with Constructor and Method
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    return `Hi, I'm ${this.name} and I'm ${this.age} years old.`;
+  }
+}
+
+// Create object
+const p1 = new Person("Dinesh", 20);
+
+// Call method
+console.log(p1.greet());
