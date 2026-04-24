@@ -1,0 +1,31 @@
+1. Synchronous Execution (runs line by line)
+console.log("Start");
+console.log("This runs first");
+console.log("This runs second");
+
+console.log("End");
+
+2. Asynchronous Execution (non-blocking)
+console.log("Start");
+
+setTimeout(() => {
+    console.log("This runs after 2 seconds");
+}, 2000);
+
+console.log("End");
+
+3. Print a message after 2 seconds
+setTimeout(() => {
+    console.log("Hello after 2 seconds!");
+}, 2000);
+4. Print a counter every 1 second
+let count = 1;
+
+let interval = setInterval(() => {
+    console.log(count);
+    count++;
+
+    if (count > 10) {
+        clearInterval(interval); // stops after 10
+    }
+}, 1000);
