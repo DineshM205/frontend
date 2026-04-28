@@ -1,0 +1,31 @@
+// 1. Function that accepts a callback
+function greet(name, callback) {
+    console.log("Hello " + name);
+    callback();
+}
+function done() {
+    console.log("Callback function executed");
+}
+greet("Dinesh", done);
+
+
+// 2. Create a promise that resolves or rejects
+let myPromise = new Promise(function(resolve, reject) {
+    let success = true; // change to false for reject
+
+    if (success) {
+        resolve("Promise Resolved Successfully");
+    } else {
+        reject("Promise Rejected");
+    }
+});
+
+
+// 3. Handle promise using then and catch
+myPromise
+.then(function(result) {
+    console.log(result);
+})
+.catch(function(error) {
+    console.log(error);
+});
