@@ -1,0 +1,30 @@
+// Promise code using async/await
+
+function myPromise() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Promise Success");
+        }, 2000);
+    });
+}
+
+async function displayData() {
+    let result = await myPromise();
+    console.log(result);
+}
+
+displayData();
+
+
+// Save and Remove a value in localStorage
+
+localStorage.setItem("name", "Dinesh");
+console.log(localStorage.getItem("name"));
+localStorage.removeItem("name");
+
+
+// Save and Remove a value in sessionStorage
+
+sessionStorage.setItem("city", "Chennai");
+console.log(sessionStorage.getItem("city"));
+sessionStorage.removeItem("city");
