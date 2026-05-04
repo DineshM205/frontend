@@ -1,0 +1,176 @@
+1.Create a 3-column layout with .col classes.
+Make it responsive: 3 columns on large screens, stacked on small screens
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Layout</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+  }
+
+  /* Responsive: stack columns on small screens */
+  @media (max-width: 768px) {
+    .col {
+      flex: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col">Column 1</div>
+
+    <div class="col">
+      Column 2
+
+      <!-- Task 2: Nested row -->
+      <div class="row">
+        <div class="col">Sub Column A</div>
+        <div class="col">Sub Column B</div>
+      </div>
+    </div>
+
+    <div class="col">Column 3</div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+2.Inside one column, add a nested row with two sub-columns.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid black;
+  }
+
+  /* Make sub-columns split equally */
+  .sub-col {
+    flex: 1;
+    padding: 10px;
+    border: 1px dashed gray;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .col, .sub-col {
+      flex: 100%;
+    }
+  }
+</style>
+
+<title>Nested Columns</title>
+</head>
+<body>
+
+<div class="row">
+  
+  <div class="col">Column 1</div>
+
+  <div class="col">
+    Column 2
+
+    <!-- Nested Row -->
+    <div class="row">
+      <div class="sub-col">Sub Column 1</div>
+      <div class="sub-col">Sub Column 2</div>
+    </div>
+
+  </div>
+
+  <div class="col">Column 3</div>
+
+</div>
+
+</body>
+</html>
+
+
+3.Build a responsive navbar with links.
+<style>
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+
+  .nav-links li {
+    margin-left: 20px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Mobile menu */
+  .menu-toggle {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: #444;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+  }
+</style>
