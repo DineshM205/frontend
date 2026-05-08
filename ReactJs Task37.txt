@@ -1,0 +1,52 @@
+1. Build a text input with `useState` that shows a live preview of typed text. 
+// TextPreview.js
+import React, { useState } from "react";
+
+function TextPreview() {
+  const [text, setText] = useState("");
+
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h2>Live Text Preview</h2>
+
+      <input
+        type="text"
+        placeholder="Type something..."
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        style={{ padding: "10px" }}
+      />
+
+      <h3>Preview:</h3>
+      <p>{text}</p>
+    </div>
+  );
+}
+export default TextPreview;
+ 2. Add a toggle switch using `useState` to switch dark/light mode styles. given the react js code
+// DarkModeToggle.js
+import React, { useState } from "react";
+
+function DarkModeToggle() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const style = {
+    backgroundColor: darkMode ? "#222" : "#fff",
+    color: darkMode ? "#fff" : "#000",
+    height: "100vh",
+    textAlign: "center",
+    paddingTop: "50px",
+  };
+
+  return (
+    <div style={style}>
+      <h2>Dark / Light Mode</h2>
+
+      <button onClick={() => setDarkMode(!darkMode)}>
+        Switch to {darkMode ? "Light Mode" : "Dark Mode"}
+      </button>
+    </div>
+  );
+}
+
+export default DarkModeToggle;
