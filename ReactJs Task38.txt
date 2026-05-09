@@ -1,0 +1,76 @@
+1. Create a counter using useReducer with actions: INCREMENT, DECREMENT, RESET. given the code react js
+import React, { useReducer } from "react";
+
+// Step 1: Create reducer function
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return state + 1;
+    case "DECREMENT":
+      return state - 1;
+    case "RESET":
+      return 0;
+    default:
+      return state;
+  }
+};
+
+function Counter() {
+  // Step 2: useReducer hook
+  const [count, dispatch] = useReducer(reducer, 0);
+
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h2>Counter: {count}</h2>
+
+      {/* Step 3: Buttons */}
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>
+        Increment
+      </button>
+
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>
+        Decrement
+      </button>
+
+      <button onClick={() => dispatch({ type: "RESET" })}>
+        Reset
+      </button>
+    </div>
+  );
+}
+
+export default Counter;
+
+2. Use useRef to focus the input when a 'Focus' button is clicked. react js code
+import React, { useRef } from "react";
+
+function FocusInput() {
+  // Step 1: create ref
+  const inputRef = useRef(null);
+
+  // Step 2: focus function
+  const handleFocus = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h2>useRef Focus Example</h2>
+
+      {/* Step 3: attach ref */}
+      <input
+        ref={inputRef}
+        type="text"
+        placeholder="Click button to focus"
+      />
+
+      <br /><br />
+
+      <button onClick={handleFocus}>
+        Focus Input
+      </button>
+    </div>
+  );
+}
+
+export default FocusInput;
