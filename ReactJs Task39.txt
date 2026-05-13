@@ -1,0 +1,130 @@
+ 1. Render a list of products using `.map()` with stable `key` props.
+import React from "react";
+
+function App() {
+  const products = [
+    { id: 1, name: "Laptop" },
+    { id: 2, name: "Mobile" },
+    { id: 3, name: "Headphones" }
+  ];
+
+  return (
+    <div>
+      <h2>Product List</h2>
+
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>
+            {product.name}
+          </li>
+        ))}
+      </ul>
+
+    </div>
+  );
+}
+
+export default App;
+
+ 2. Show 'No products available' when the list is empty using a conditional (ternary/&&).
+import React from "react";
+
+function App() {
+  const products = []; // empty array
+
+  return (
+    <div>
+      <h2>Product List</h2>
+
+      {products.length === 0 ? (
+        <p>No products available</p>
+      ) : (
+        <ul>
+          {products.map((product) => (
+            <li key={product.id}>{product.name}</li>
+          ))}
+        </ul>
+      )}
+
+    </div>
+  );
+}
+
+export default App;
+
+ 3. Implement a filter input that filters the rendered list by product name.
+import React, { useState } from "react";
+
+function App() {
+  const [search, setSearch] = useState("");
+
+  const products = [
+    { id: 1, name: "Laptop" },
+    { id: 2, name: "Mobile" },
+    { id: 3, name: "Headphones" }
+  ];
+
+  // Filter logic
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return (
+    <div>
+      <h2>Product List</h2>
+
+      {/* Input box */}
+      <input
+        type="text"
+        placeholder="Search product..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+
+      {/* Render filtered list */}
+      <ul>
+        {filteredProducts.map((product) => (
+          <li key={product.id}>{product.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+
+ 4. Highlight an item on hover using conditional class application. given react js code
+import React, { useState } from "react";
+import "./App.css";
+
+function App() {
+  const products = [
+    { id: 1, name: "Laptop" },
+    { id: 2, name: "Mobile" },
+    { id: 3, name: "Headphones" }
+  ];
+
+  const [hoveredId, setHoveredId] = useState(null);
+
+  return (
+    <div>
+      <h2>Product List</h2>
+
+      <ul>
+        {products.map((product) => (
+          <li
+            key={product.id}
+            onMouseEnter={() => setHoveredId(product.id)}
+            onMouseLeave={() => setHoveredId(null)}
+            className={hoveredId === product.id ? "highlight" : ""}
+          >
+            {product.name}
+          </li>
+        ))}
+      </ul>
+
+    </div>
+  );
+}
+
+export default App;
