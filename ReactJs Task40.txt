@@ -1,0 +1,334 @@
+ 1. Build a signup form with `name`, `email`, `password` as controlled inputs.
+import { useState } from "react";
+import TextInput from "./TextInput";
+
+function App() {
+  const initialState = {
+    name: "",
+    email: "",
+    password: "",
+  };
+
+  const [formData, setFormData] = useState(initialState);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  return (
+    <div>
+      <h2>Signup Form</h2>
+
+      <form>
+        <TextInput
+          label="Name"
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+
+        <TextInput
+          label="Email"
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+
+        <TextInput
+          label="Password"
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
+
+ 2. Add basic validation (required + email format) and disable submit when invalid.
+import { useState } from "react";
+import TextInput from "./TextInput";
+
+function App() {
+  const initialState = {
+    name: "",
+    email: "",
+    password: "",
+  };
+
+  const [formData, setFormData] = useState(initialState);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Email Validation
+  const emailValid = /\S+@\S+\.\S+/.test(formData.email);
+
+  // Form Validation
+  const isFormValid =
+    formData.name &&
+    formData.password &&
+    emailValid;
+
+  return (
+    <div>
+      <h2>Signup Form</h2>
+
+      <form>
+        <TextInput
+          label="Name"
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+
+        <TextInput
+          label="Email"
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+
+        {!emailValid && formData.email && (
+          <p>Invalid Email Format</p>
+        )}
+
+        <TextInput
+          label="Password"
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+
+        <button type="submit" disabled={!isFormValid}>
+          Submit
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
+
+ 3. On submit, prevent default and print form data to a preview panel below.
+import { useState } from "react";
+import TextInput from "./TextInput";
+
+function App() {
+  const initialState = {
+    name: "",
+    email: "",
+    password: "",
+  };
+
+  const [formData, setFormData] = useState(initialState);
+  const [preview, setPreview] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const emailValid = /\S+@\S+\.\S+/.test(formData.email);
+
+  const isFormValid =
+    formData.name &&
+    formData.password &&
+    emailValid;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setPreview(formData);
+  };
+
+  return (
+    <div>
+      <h2>Signup Form</h2>
+
+      <form onSubmit={handleSubmit}>
+        <TextInput
+          label="Name"
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+
+        <TextInput
+          label="Email"
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+
+        {!emailValid && formData.email && (
+          <p>Invalid Email Format</p>
+        )}
+
+        <TextInput
+          label="Password"
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+
+        <button type="submit" disabled={!isFormValid}>
+          Submit
+        </button>
+      </form>
+
+      {preview && (
+        <div>
+          <h3>Preview Panel</h3>
+
+          <p>Name: {preview.name}</p>
+          <p>Email: {preview.email}</p>
+          <p>Password: {preview.password}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+export default App;
+ 4. Add a 'Clear' button to reset all controlled inputs to initial state.
+import { useState } from "react";
+import TextInput from "./TextInput";
+
+function App() {
+  const initialState = {
+    name: "",
+    email: "",
+    password: "",
+  };
+
+  const [formData, setFormData] = useState(initialState);
+  const [preview, setPreview] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const emailValid = /\S+@\S+\.\S+/.test(formData.email);
+
+  const isFormValid =
+    formData.name &&
+    formData.password &&
+    emailValid;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setPreview(formData);
+  };
+
+  const handleClear = () => {
+    setFormData(initialState);
+    setPreview(null);
+  };
+
+  return (
+    <div>
+      <h2>Signup Form</h2>
+
+      <form onSubmit={handleSubmit}>
+        <TextInput
+          label="Name"
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+
+        <TextInput
+          label="Email"
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+
+        {!emailValid && formData.email && (
+          <p>Invalid Email Format</p>
+        )}
+
+        <TextInput
+          label="Password"
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+
+        <button type="submit" disabled={!isFormValid}>
+          Submit
+        </button>
+
+        <button type="button" onClick={handleClear}>
+          Clear
+        </button>
+      </form>
+
+      {preview && (
+        <div>
+          <h3>Preview Panel</h3>
+
+          <p>Name: {preview.name}</p>
+          <p>Email: {preview.email}</p>
+          <p>Password: {preview.password}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+export default App;
+ 5. Extract a reusable `TextInput` component and use it for all fields.given the separate code in react js 
+function TextInput({
+  label,
+  type,
+  name,
+  value,
+  onChange,
+}) {
+  return (
+    <div>
+      <label>{label}</label>
+      <br />
+
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+      />
+
+      <br />
+      <br />
+    </div>
+  );
+}
+export default TextInput;
