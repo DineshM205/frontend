@@ -1,0 +1,124 @@
+ 1. Fetch and display users from a public endpoint using `useEffect` on mount.
+import React, { useEffect, useState } from "react";
+function FetchUsers() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((data) => setUsers(data));
+  }, []);
+  return (
+    <div>
+      <h2>User List</h2>
+      {users.map((user) => (
+        <div key={user.id}>
+          <p>{user.name}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+export default FetchUsers;
+ 2. Add a 'Refresh' button whose handler is memoized with `useCallback`.
+import React, { useCallback, useEffect, useState } from "react";
+function RefreshUsers() {
+  const [users, setUsers] = useState([]);
+  const fetchUsers = useCallback(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((data) => setUsers(data));
+  }, []);
+
+  useEffect(() => {
+    fetchUsers();
+  }, [fetchUsers]);
+  return (
+    <div>
+      <h2>Users</h2>
+
+      <button onClick={fetchUsers}>Refresh</button>
+
+      {users.map((user) => (
+        <p key={user.id}>{user.name}</p>
+      ))}
+    </div>
+  );
+}
+export default RefreshUsers;
+
+ 3. Compute and display an expensive derived value (e.g., total/avg) using `useMemo`.
+import React, { useMemo, useState } from "react";
+function UseMemoExample() {
+  const [numbers] = useState([10, 20, 30, 40, 50]);
+  const [count, setCount] = useState(0);
+  const average = useMemo(() => {
+    console.log("Calculating Average...");
+    let total = numbers.reduce((sum, num) => sum + num, 0);
+    return total / numbers.length;
+  }, [numbers]);
+
+  return (
+    <div>
+      <h2>Average Value</h2>
+      <p>Average: {average}</p>
+      <button onClick={() => setCount(count + 1)}>
+        Count {count}
+      </button>
+    </div>
+  );
+}
+export default UseMemoExample;
+ 4. Demonstrate effect dependencies by refetching when a filter term changes.
+import React, { useEffect, useState } from "react";
+function FilterUsers() {
+  const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState("");
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((data) => {
+        const filteredUsers = data.filter((user) =>
+          user.name.toLowerCase().includes(search.toLowerCase())
+        );
+
+        setUsers(filteredUsers);
+      });
+  }, [search]);
+  return (
+    <div>
+      <h2>Search Users</h2>
+      <input
+        type="text"
+        placeholder="Search user"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      {users.map((user) => (
+        <p key={user.id}>{user.name}</p>
+      ))}
+    </div>
+  );
+}
+export default FilterUsers;
+ 5. Add cleanup in an effect (abort fetch or clear a timer) and verify it runs.
+import React, { useEffect, useState } from "react";
+function CleanupExample() {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    console.log("Timer Started");
+    const timer = setInterval(() => {
+      setCount((prev) => prev + 1);
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+      console.log("Timer Cleaned Up");
+    };
+  }, []);
+  return (
+    <div>
+      <h2>Cleanup Example</h2>
+      <p>Timer Count: {count}</p>
+    </div>
+  );
+}
+export default CleanupExample;
