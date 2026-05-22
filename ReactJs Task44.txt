@@ -1,0 +1,156 @@
+ 1. Install MUI and create a themed `ThemeProvider`.
+Install MUI
+npm install @mui/material @emotion/react @emotion/styled
+main.jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#ff9800',
+    },
+  },
+})
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>
+)
+ 2. Build a login form with `TextField` components and a submit `Button`.
+LoginForm.jsx
+import { Box, TextField, Button, Typography } from '@mui/material'
+function LoginForm() {
+  return (
+    <Box
+      sx={{
+        width: 300,
+        mx: 'auto',
+        mt: 5,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+      }}
+    >
+      <Typography variant="h4">
+        Login
+      </Typography>
+
+      <TextField
+        label="Email"
+        variant="outlined"
+        fullWidth
+      />
+
+      <TextField
+        label="Password"
+        type="password"
+        variant="outlined"
+        fullWidth
+      />
+
+      <Button
+        variant="contained"
+        color="primary"
+      >
+        Submit
+      </Button>
+    </Box>
+  )
+}
+
+export default LoginForm
+ 3. Create a `Card` with header, content, and actions for a product.
+ProductCard.jsx
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardActions,
+  Typography,
+  Button,
+} from '@mui/material'
+
+function ProductCard() {
+  return (
+    <Card sx={{ width: 350, m: 4 }}>
+      <CardHeader title="Laptop" />
+
+      <CardContent>
+        <Typography variant="body1">
+          High performance laptop for coding and gaming.
+        </Typography>
+
+        <Typography variant="h6" sx={{ mt: 2 }}>
+          ₹55,000
+        </Typography>
+      </CardContent>
+
+      <CardActions>
+        <Button variant="contained">
+          Buy Now
+        </Button>
+
+        <Button variant="outlined">
+          Add to Cart
+        </Button>
+      </CardActions>
+    </Card>
+  )
+}
+export default ProductCard
+ 4. Use MUI props/system to add spacing and layout to the form and card.
+LayoutExample.jsx
+import { Box, Paper, Typography } from '@mui/material'
+
+function LayoutExample() {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 3,
+        p: 4,
+        justifyContent: 'center',
+      }}
+    >
+      <Paper sx={{ p: 3 }}>
+        <Typography>Box 1</Typography>
+      </Paper>
+
+      <Paper sx={{ p: 3 }}>
+        <Typography>Box 2</Typography>
+      </Paper>
+    </Box>
+  )
+}
+
+export default LayoutExample
+ 5. Replace a custom button with MUI `Button` across the app. given the separate code 
+import LoginForm from './LoginForm'
+import ProductCard from './ProductCard'
+import LayoutExample from './LayoutExample'
+import AppButton from './AppButton'
+
+function App() {
+  return (
+    <div>
+      <LoginForm />
+      <ProductCard />
+      <LayoutExample />
+      <AppButton />
+    </div>
+  )
+}
+
+export default App
