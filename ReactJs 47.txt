@@ -1,0 +1,114 @@
+1. Install Redux Toolkit and set up a `store` with a `counterSlice`.
+npm install @reduxjs/toolkit react-redux
+
+2. Dispatch `increment`/`decrement` actions from a component.
+Counter.jsx
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { increment, decrement } from './counterSlice'
+
+function Counter() {
+  const dispatch = useDispatch()
+
+  return (
+    <div>
+      <button onClick={() => dispatch(increment())}>
+        Increment
+      </button>
+
+      <button onClick={() => dispatch(decrement())}>
+        Decrement
+      </button>
+    </div>
+  )
+}
+
+export default Counter
+3. Use `useSelector` to read count and render it in the UI.
+Counter.jsx
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { increment, decrement } from './counterSlice'
+
+function Counter() {
+  const count = useSelector((state) => state.counter.value)
+
+  const dispatch = useDispatch()
+
+  return (
+    <div>
+      <h1>{count}</h1>
+
+      <button onClick={() => dispatch(increment())}>
+        Increment
+      </button>
+
+      <button onClick={() => dispatch(decrement())}>
+        Decrement
+      </button>
+    </div>
+  )
+}
+
+export default Counter
+4. Create another slice `todosSlice` with `addTodo` and `toggleTodo`.
+Counter.jsx
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { increment, decrement } from './counterSlice'
+
+function Counter() {
+  const count = useSelector((state) => state.counter.value)
+
+  const dispatch = useDispatch()
+
+  return (
+    <div>
+      <h1>{count}</h1>
+
+      <button onClick={() => dispatch(increment())}>
+        Increment
+      </button>
+
+      <button onClick={() => dispatch(decrement())}>
+        Decrement
+      </button>
+    </div>
+  )
+}
+
+export default Counter
+5. Combine slices and verify both pieces of state update correctly.
+todosSlice.js
+import { createSlice } from '@reduxjs/toolkit'
+const todosSlice = createSlice({
+  name: 'todos',
+
+  initialState: {
+    items: [],
+  },
+
+  reducers: {
+    addTodo: (state, action) => {
+      state.items.push({
+        id: Date.now(),
+        text: action.payload,
+        completed: false,
+      })
+    },
+
+    toggleTodo: (state, action) => {
+      const todo = state.items.find(
+        (item) => item.id === action.payload
+      )
+
+      if (todo) {
+        todo.completed = !todo.completed
+      }
+    },
+  },
+})
+
+export const { addTodo, toggleTodo } = todosSlice.actions
+
+export default todosSlice.reducer
