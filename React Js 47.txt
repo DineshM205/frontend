@@ -1,0 +1,85 @@
+1.Create a MUI Radio group 'Gender', with 2 radio buttons respectively for 'Male' & 'Female'
+Muicomponent.jsx
+import React, { useState } from "react";
+import {
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  FormControl,
+  FormLabel
+} from "@mui/material";
+
+function GenderRadio() {
+  const [gender, setGender] = useState("");
+
+  return (
+    <FormControl>
+      <FormLabel>Gender</FormLabel>
+
+      <RadioGroup
+        value={gender}
+        onChange={(e) => setGender(e.target.value)}
+      >
+        <FormControlLabel
+          value="Male"
+          control={<Radio />}
+          label="Male"
+        />
+
+        <FormControlLabel
+          value="Female"
+          control={<Radio />}
+          label="Female"
+        />
+      </RadioGroup>
+
+      <h3>Selected: {gender}</h3>
+    </FormControl>
+  );
+}
+export default GenderRadio;
+App.jsx
+import Muicomponent from "./Muicomponent";
+<>
+<Muicomponet/>
+</>
+
+2.Create a MUI Switch button to toggle between 'dark' and 'light' mode..
+Muiswitch.jsx
+import React, { useState } from "react";
+import { Switch, FormControlLabel } from "@mui/material";
+
+function ThemeSwitch() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  return (
+    <div
+      style={{
+        backgroundColor: darkMode ? "black" : "white",
+        color: darkMode ? "white" : "black",
+        height: "100vh",
+        padding: "20px"
+      }}
+    >
+      <FormControlLabel
+        control={
+          <Switch
+            checked={darkMode}
+            onChange={() => setDarkMode(!darkMode)}
+          />
+        }
+        label={darkMode ? "Dark Mode" : "Light Mode"}
+      />
+
+      <h2>
+        Current Mode: {darkMode ? "Dark" : "Light"}
+      </h2>
+    </div>
+  );
+}
+export default ThemeSwitch;
+App.jsx
+import Muiswitch from "./Muiswitch";
+<>
+<Muiswitch/>
+</>
